@@ -1,0 +1,32 @@
+---
+abstract: 'Tapper - Configuration hub for all Tapper libs'
+author:
+  - 'AMD OSRC Tapper Team, C<< <tapper at amd64.org> >>'
+  - 'AMD OSRC Tapper Team <tapper@amd64.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  File::Slurp: 0
+  Tapper::Test: 3.000001
+  Test::More: 0
+  Test::Perl::Critic: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 1.00'
+license: freebsd
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Tapper-Config
+no_index:
+  directory:
+    - inc
+    - t
+    - xt
+requires:
+  File::ShareDir: 0
+  File::Slurp: 0
+  Hash::Merge::Simple: 0
+  YAML::Syck: 0
+  perl: 5.010
+version: 3.000001
