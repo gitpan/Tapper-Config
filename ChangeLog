@@ -1,8 +1,18 @@
-2011-03-10 Steffen Schwigon <steffen.schwigon@amd.com>
+2011-04-07  Steffen Schwigon  <steffen.schwigon@amd.com>
+
+	* v3.0.10
+
+	* [FIX] allow absolute path for log4perl config
+	* adapt config defaults to new server name and dir layout
+	* release version++ roundhouse kick
+
+2010-03-30 Steffen Schwigon <steffen.schwigon@amd.com>
 
 	* v3.0.4
 
 	* distro maintenance
+	* rework log4perl handling
+	* message receiver logfile to /var/log
 
 2011-03-08 Steffen Schwigon <steffen.schwigon@amd.com>
 

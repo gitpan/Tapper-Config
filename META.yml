@@ -1,17 +1,18 @@
 ---
 abstract: 'Tapper - Context sensitive configuration hub for all Tapper libs'
 author:
+  - 'AMD OSRC Tapper Team, C<< <tapper at amd64.org> >>'
   - 'AMD OSRC Tapper Team <tapper@amd64.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
   File::Slurp: 0
-  Tapper::Test: 3.000002
+  Tapper::Test: 3.000010
   Test::More: 0
   Test::Perl::Critic: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.91'
+generated_by: 'Module::Install version 1.00'
 license: freebsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -31,4 +32,4 @@ requires:
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Tapper-Config
   repository: git://github.com/amd/Tapper-Config.git
-version: 3.000004
+version: 3.000010

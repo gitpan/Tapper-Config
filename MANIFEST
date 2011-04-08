@@ -13,6 +13,7 @@ lib/auto/Tapper/Config/log4perl_test.cfg
 lib/auto/Tapper/Config/tapper.yml
 lib/Tapper/Config.pm
 LICENSE
+Makefile.old
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP

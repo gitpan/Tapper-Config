@@ -17,7 +17,7 @@ Tapper::Config - Tapper - Context sensitive configuration hub for all Tapper lib
 
 =cut
 
-our $VERSION = '3.000004';
+our $VERSION = '3.000010';
 
 =head1 SYNOPSIS
 
@@ -118,7 +118,9 @@ found from the list of remaining alternatives is used.
         sub _prepare_special_entries {
                 my ($Config) = @_;
 
-                $Config->{files}{log4perl_cfg} = module_file('Tapper::Config', $Config->{files}{log4perl_cfg});
+                if (not $Config->{files}{log4perl_cfg} =~ m,^/,) {
+                        $Config->{files}{log4perl_cfg} = module_file('Tapper::Config', $Config->{files}{log4perl_cfg});
+                }
                 return $Config;
         }
 
