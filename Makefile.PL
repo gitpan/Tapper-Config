@@ -1,28 +1,58 @@
+
 use strict;
 use warnings;
 
-use inc::Module::Install;
+use 5.010;
 
-name     'Tapper-Config';
-all_from 'lib/Tapper/Config.pm';
-author   'AMD OSRC Tapper Team <tapper@amd64.org>';
-license  'freebsd';
+use ExtUtils::MakeMaker 6.30;
 
-build_requires 'Test::More'         => 0;
-build_requires 'Test::Perl::Critic' => 0;
-build_requires 'Tapper::Test' => "3.000010";
-build_requires 'File::Slurp'        => 0;
 
-author_requires 'Module::Install::WriteAll';
 
-requires 'Hash::Merge::Simple' => 0;
-requires 'File::Slurp'         => 0;
-requires 'File::ShareDir'      => 0;
-requires 'perl'                => '5.010';
-requires 'YAML::Syck'          => "1.17";
+my %WriteMakefileArgs = (
+  "ABSTRACT" => "Tapper - Context sensitive configuration hub for all Tapper libs",
+  "AUTHOR" => "AMD OSRC Tapper Team <tapper\@amd64.org>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => 0
+  },
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
+  },
+  "DISTNAME" => "Tapper-Config",
+  "EXE_FILES" => [],
+  "LICENSE" => "open_source",
+  "NAME" => "Tapper::Config",
+  "PREREQ_PM" => {
+    "File::ShareDir" => 0,
+    "File::Slurp" => 0,
+    "Hash::Merge::Simple" => 0,
+    "YAML::Syck" => 0,
+    "strict" => 0,
+    "warnings" => 0
+  },
+  "VERSION" => "4.0.1",
+  "test" => {
+    "TESTS" => "t/*.t"
+  }
+);
 
-repository 'git://github.com/amd/Tapper-Config.git';
-bugtracker 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Tapper-Config';
 
-WriteAll;
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
 

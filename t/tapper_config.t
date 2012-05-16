@@ -5,9 +5,10 @@ use warnings;
 
 use Test::More;
 
-plan tests => 10;
+plan tests => 11;
 
 use Tapper::Config;
+
 
 local $ENV{TAPPER_CONFIG_FILE}="lib/auto/Tapper/Config/tapper.yml";
 
@@ -23,9 +24,17 @@ like(Tapper::Config->subconfig->{files}{log4perl_cfg}, qr{auto/Tapper/Config/log
         local $ENV{TAPPER_DEVELOPMENT} = 0;
         local $ENV{HARNESS_ACTIVE} = 0;
 
+        my $expected_grub = 'default 0
+timeout 2
+title Test run (Install)
+  tftpserver $TAPPER_TFTPSERVER
+  kernel $TAPPER_KERNEL root=/dev/nfs ro ip=dhcp nfsroot=$TAPPER_NFSROOT $TAPPER_OPTIONS $HOSTOPTIONS
+';
+
         Tapper::Config->_switch_context();
         is(Tapper::Config->subconfig->{test_value},              'live',         "[context: live] Subconfig");
         is(Tapper::Config->subconfig->{test_value_only_in_base}, 'only_in_base', "[context: live] base config");
+        is(Tapper::Config->subconfig->{mcp}{installer}{default_grub}, $expected_grub, "[context: live] installer default grub");
         like(Tapper::Config->subconfig->{files}{log4perl_cfg}, qr{auto/Tapper/Config/log4perl.cfg}, "[context: live] log4perl config file fullpath");
 }
 

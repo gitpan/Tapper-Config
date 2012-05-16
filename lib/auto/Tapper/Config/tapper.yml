@@ -22,6 +22,9 @@ test_value_only_in_base: only_in_base
 # WebGUI currently offers only one queue for new testruns
 new_testrun_queue: AdHoc
 
+# CLI uses this URL to show links to WebGUI
+base_url: http://tapper/tapper
+
 # whether Tapper::Reports::API allows mason and TT templates
 reports_enable_mason: 0
 reports_enable_tt: 1
@@ -39,6 +42,29 @@ webserver:               tapper
 
 reset_plugin:            OSRC
 reset_plugin_options:
+
+# Watch out: grub contains newlines and indented whitespace!
+mcp:
+  installer:
+    default_grub: |
+      default 0
+      timeout 2
+      title Test run (Install)
+        tftpserver $TAPPER_TFTPSERVER
+        kernel $TAPPER_KERNEL root=/dev/nfs ro ip=dhcp nfsroot=$TAPPER_NFSROOT $TAPPER_OPTIONS $HOSTOPTIONS
+  test:
+    default_grub: |
+      default 0
+      timeout 2
+      title Test run (Execute)
+        root $grubroot
+        kernel /boot/vmlinuz root=$root ip=dhcp noapic $TAPPER_OPTIONS $HOSTOPTIONS
+        $initrd_options
+
+# for host specific replacements add another key after '_default' named after the respective hostname
+grub_completion_HOSTOPTIONS:
+  _default:
+    earlyprintk=serial,ttyS0,115200 console=ttyS0,115200
 
 # 'db' is DEPRECATED in favor of simpler 'database'
 db:
@@ -73,9 +99,16 @@ testplans:
       mailhost: smtp.osrc.amd.com
       mailfrom: Tapper Testplan Reporter <Tapper@elbe.amd.com>,
       mailto: Tapper Testplan Reporter <Tapper@elbe.amd.com>,
-      base_url: https://tapper
+      base_url: http://tapper
       cacheroot: /data/tapper/live/configs/cacheroot/
       cachetime: 10 min
+
+notification:
+  sender:
+    plugins:
+      Mail:
+        mailhost: mailhost
+        mailfrom: Tapper Notifier <Tapper@tapper>,
 
 
 times:
@@ -84,7 +117,10 @@ times:
    reschedule_time: 3600
    test_runtime_default: 7200
    installer_timeout: 7200
+   default_testprogram_timeout: 60
    receiver_timeout: 86400
+   notification_poll_intervall: 10
+   action_poll_intervall: 10
 
 # configurable files paths
 paths:
@@ -119,6 +155,8 @@ files:
     linux64: tapperutils/opt-tapper64.tar.gz
     linux32: tapperutils/opt-tapper32.tar.gz
     windows: tapperutils/wintest.tar.gz
+    local: tapperutils/opt-tapperlocal.tar.gz
+  tapper_prc: /opt/tapper/bin/tapper-client
   simnow_installer: /opt/tapper/bin/tapper-installer-simnow.pl
   simnow_config: /tmp/simnow.yml
   simnow_console: /root/.simnow/com1/simnow_out

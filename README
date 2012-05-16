@@ -1,33 +1,14 @@
-Tapper-Config
-=============
-
-Context sensitive configuration hub for all Tapper libs
 
 
-About Tapper 
-============
+This archive contains the distribution Tapper-Config,
+version 4.0.1:
 
-Tapper is an infrastructure for all aspects of testing 
-inclusive Operating Systems and Virtualization.
+  Tapper - Context sensitive configuration hub for all Tapper libs
 
-Tapper contains
+This software is Copyright (c) 2012 by Advanced Micro Devices, Inc..
 
- - Automation
- - Machine Scheduling
- - Command line utils
- - Web Frontend application
- - Support for writing tests
- - Powerful result evaluation API
- - Testplan support with TaskJuggler
- - Many use-cases from tracking test results to
-   benchmarking to full OS testing including virtualization
+This is free software, licensed under:
 
-More information about Tapper:
+  The (two-clause) FreeBSD License
 
- - https://github.com/amd/Tapper-Doc/
- - http://search.cpan.org/~amd/Tapper-Doc/
 
-Other Tapper subprojects:
-
- - https://github.com/amd
- - http://search.cpan.org/~amd

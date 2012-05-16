@@ -1,3 +1,12 @@
+Revision history for Tapper-Config
+
+4.0.1     2012-05-16
+        - Added default configs for new features
+        - drop too heavy test requirements
+        - provide new clientpkg architecture 'local'
+        - Carved out installer grub file
+        - big Dist::Zilla roundhouse kick
+
 2011-04-07  Steffen Schwigon  <steffen.schwigon@amd.com>
 
 	* v3.0.10
