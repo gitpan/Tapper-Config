@@ -3,7 +3,7 @@ BEGIN {
   $Tapper::Config::AUTHORITY = 'cpan:AMD';
 }
 {
-  $Tapper::Config::VERSION = '4.0.1';
+  $Tapper::Config::VERSION = '4.0.2';
 }
 # ABSTRACT: Tapper - Context sensitive configuration hub for all Tapper libs
 
