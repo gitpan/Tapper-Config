@@ -24,141 +24,141 @@ requires:
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Tapper-Config
   homepage: http://metacpan.org/release/Tapper-Config
-  repository: git://github.com/amd/Tapper-Config.git
-version: 4.1.0
+  repository: git://github.com/tapper/Tapper-Config.git
+version: 4.1.1
 x_Dist_Zilla:
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
-      name: '@AMD/GatherDir'
+      name: '@TAPPER/GatherDir'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::PruneCruft
-      name: '@AMD/PruneCruft'
+      name: '@TAPPER/PruneCruft'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::ManifestSkip
-      name: '@AMD/ManifestSkip'
+      name: '@TAPPER/ManifestSkip'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::MetaYAML
-      name: '@AMD/MetaYAML'
+      name: '@TAPPER/MetaYAML'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::Readme
-      name: '@AMD/Readme'
+      name: '@TAPPER/Readme'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::ExtraTests
-      name: '@AMD/ExtraTests'
+      name: '@TAPPER/ExtraTests'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::ExecDir
-      name: '@AMD/ExecDir'
+      name: '@TAPPER/ExecDir'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::ShareDir
-      name: '@AMD/ShareDir'
+      name: '@TAPPER/ShareDir'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::MakeMaker
-      name: '@AMD/MakeMaker'
+      name: '@TAPPER/MakeMaker'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::Manifest
-      name: '@AMD/Manifest'
+      name: '@TAPPER/Manifest'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::TestRelease
-      name: '@AMD/TestRelease'
+      name: '@TAPPER/TestRelease'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
-      name: '@AMD/ConfirmRelease'
+      name: '@TAPPER/ConfirmRelease'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
-      name: '@AMD/UploadToCPAN'
+      name: '@TAPPER/UploadToCPAN'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::MetaConfig
-      name: '@AMD/MetaConfig'
+      name: '@TAPPER/MetaConfig'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::MetaJSON
-      name: '@AMD/MetaJSON'
+      name: '@TAPPER/MetaJSON'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::PkgVersion
-      name: '@AMD/PkgVersion'
+      name: '@TAPPER/PkgVersion'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
-      name: '@AMD/PodSyntaxTests'
+      name: '@TAPPER/PodSyntaxTests'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::NoTabsTests
-      name: '@AMD/NoTabsTests'
+      name: '@TAPPER/NoTabsTests'
       version: 0.01
     -
       class: Dist::Zilla::Plugin::PodCoverageTests
-      name: '@AMD/PodCoverageTests'
+      name: '@TAPPER/PodCoverageTests'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::MetaResources
-      name: '@AMD/MetaResources'
+      name: '@TAPPER/MetaResources'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::Authority
-      name: '@AMD/Authority'
+      name: '@TAPPER/Authority'
       version: 1.006
     -
       class: Dist::Zilla::Plugin::EOLTests
-      name: '@AMD/EOLTests'
+      name: '@TAPPER/EOLTests'
       version: 0.02
     -
       class: Dist::Zilla::Plugin::PodWeaver
-      name: '@AMD/PodWeaver'
+      name: '@TAPPER/PodWeaver'
       version: 3.101641
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
-      name: '@AMD/AutoPrereqs'
+      name: '@TAPPER/AutoPrereqs'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::Git::Describe
-      name: '@AMD/Git::Describe'
+      name: '@TAPPER/Git::Describe'
       version: 0.002
     -
       class: Dist::Zilla::Plugin::CheckChangesHasContent
-      name: '@AMD/CheckChangesHasContent'
+      name: '@TAPPER/CheckChangesHasContent'
       version: 0.006
     -
       class: Dist::Zilla::Plugin::NextRelease
-      name: '@AMD/NextRelease'
+      name: '@TAPPER/NextRelease'
       version: 4.300023
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch
-      name: '@AMD/Git::CheckFor::CorrectBranch'
+      name: '@TAPPER/Git::CheckFor::CorrectBranch'
       version: 0.004
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
-      name: '@AMD/Git::NextVersion'
+      name: '@TAPPER/Git::NextVersion'
       version: 1.122530
     -
       class: Dist::Zilla::Plugin::Git::Check
-      name: '@AMD/@Git/Check'
+      name: '@TAPPER/@Git/Check'
       version: 1.122530
     -
       class: Dist::Zilla::Plugin::Git::Commit
-      name: '@AMD/@Git/Commit'
+      name: '@TAPPER/@Git/Commit'
       version: 1.122530
     -
       class: Dist::Zilla::Plugin::Git::Tag
-      name: '@AMD/@Git/Tag'
+      name: '@TAPPER/@Git/Tag'
       version: 1.122530
     -
       class: Dist::Zilla::Plugin::Git::Push
-      name: '@AMD/@Git/Push'
+      name: '@TAPPER/@Git/Push'
       version: 1.122530
     -
       class: Dist::Zilla::Plugin::FinderCode
@@ -189,4 +189,4 @@ x_Dist_Zilla:
     config:
       is_trial: 0
     version: 4.300023
-x_authority: cpan:AMD
+x_authority: cpan:TAPPER
