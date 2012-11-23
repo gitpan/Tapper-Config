@@ -1,11 +1,11 @@
 package Tapper::Config;
-# git description: v4.1.1-2-g4b3cd04
+# git description: v4.1.2-2-g394d7ec
 
 BEGIN {
   $Tapper::Config::AUTHORITY = 'cpan:TAPPER';
 }
 {
-  $Tapper::Config::VERSION = '4.1.2';
+  $Tapper::Config::VERSION = '4.1.3';
 }
 # ABSTRACT: Tapper - Context sensitive configuration hub for all Tapper libs
 
